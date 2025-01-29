@@ -1,0 +1,99 @@
+class VehicleParking:
+    def __init__(self):
+        self.amt = 0
+        self.c = 0
+        self.two = 0
+        self.three = 0
+        self.four = 0
+        self.heavy = 0
+
+    def two_wheeler(self):
+        if self.c < 20:
+            self.two += 1
+            self.amt += 50
+            self.c += 1
+        else:
+            print("\nParking is full")
+
+    def three_wheeler(self):
+        if self.c < 20:
+            self.three += 1
+            self.amt += 100
+            self.c += 1
+        else:
+            print("\nParking is full")
+
+    def four_wheeler(self):
+        if self.c < 20:
+            self.four += 1
+            self.amt += 200
+            self.c += 1
+        else:
+            print("\nParking is full")
+
+    def heavy_vehicle(self):
+        if self.c < 20:
+            self.heavy += 1
+            self.amt += 350
+            self.c += 1
+        else:
+            print("\nParking is full")
+
+    def show(self):
+        print("\n*** VEHICLES REGISTERED ***")
+        print(f"Total number of vehicles: {self.c}")
+        print(f"Total amount collected: {self.amt}")
+        print(f"Number of two wheelers: {self.two}")
+        print(f"Number of three wheelers: {self.three}")
+        print(f"Number of four wheelers: {self.four}")
+        print(f"Number of heavy vehicles: {self.heavy}")
+        print(" ")
+
+    def del_details(self):
+        self.amt = 0
+        self.c = 0
+        self.two = 0
+        self.three = 0
+        self.four = 0
+        self.heavy = 0
+        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Details are deleted")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+
+def main():
+    parking = VehicleParking()
+
+    while True:
+        print("\n****WELCOME****")
+        print("1. Two wheeler")
+        print("2. Three wheeler")
+        print("3. Four wheeler")
+        print("4. More than four wheeler")
+        print("5. Show the details")
+        print("6. Delete the details")
+        print("7. Exit")
+
+        ch = int(input("\nEnter your choice: "))
+        print(" ")
+
+        if ch == 1:
+            parking.two_wheeler()
+        elif ch == 2:
+            parking.three_wheeler()
+        elif ch == 3:
+            parking.four_wheeler()
+        elif ch == 4:
+            parking.heavy_vehicle()
+        elif ch == 5:
+            parking.show()
+        elif ch == 6:
+            parking.del_details()
+        elif ch == 7:
+            break
+        else:
+            print("\nEnter a correct choice")
+
+
+if __name__ == "__main__":
+    main()
